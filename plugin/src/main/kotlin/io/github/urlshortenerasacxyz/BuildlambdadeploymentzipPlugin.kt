@@ -1,4 +1,4 @@
-package com.asacxyz
+package io.github.urlshortenerasacxyz
 
 import BuildLambdaDeploymentZIPTask
 import org.gradle.api.Project
