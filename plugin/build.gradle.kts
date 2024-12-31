@@ -1,6 +1,7 @@
 plugins {
-    id("com.gradle.plugin-publish") version "1.2.1"
     alias(libs.plugins.kotlin.jvm)
+    application
+    id("com.gradle.plugin-publish") version "1.2.1"
 }
 
 repositories {
@@ -8,7 +9,7 @@ repositories {
 }
 
 group = "io.github.urlshortenerasacxyz"
-version = "1.0"
+version = "1.1"
 
 gradlePlugin {
     val buildlambdadeploymentzip by plugins.creating {
@@ -22,3 +23,6 @@ gradlePlugin {
     }
 }
 
+tasks.withType<AbstractArchiveTask> {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+}

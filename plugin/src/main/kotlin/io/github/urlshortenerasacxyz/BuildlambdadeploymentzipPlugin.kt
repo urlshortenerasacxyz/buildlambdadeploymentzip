@@ -6,7 +6,9 @@ import org.gradle.api.Plugin
 
 class BuildlambdadeploymentzipPlugin: Plugin<Project> {
     override fun apply(project: Project) {
-        project.tasks.register("buildlambdadeploymentzip", BuildLambdaDeploymentZIPTask::class.java) {
+        val buildLambdaDeploymentZIPTask = project.tasks.register("buildlambdadeploymentzip", BuildLambdaDeploymentZIPTask::class.java) {}
+        buildLambdaDeploymentZIPTask.configure {
+            it.dependsOn("build")
         }
     }
 }
